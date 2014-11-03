@@ -14,8 +14,31 @@ script:
   - echo Hello from DUT INFO Blagnac
   - ls -alF
   - cd sprint_5
-  - javac -cp .:./bin -d ./bin ./src/HelloMonde.java
-  - javac -cp .:./bin:../junit.jar -d ./bin ./src/HelloMondeTest.java
-  - java -jar ../plantuml.jar -Tpng -o srcdoc/images srcdoc/diag0.puml
+  - cd OPTIweb
+  - echo ///////////////////////////////////////////////////////
+  - echo // COMPILATION des executables
+  - echo ///////////////////////////////////////////////////////
+  - javac -cp .;../tools/junit.jar;./bin/ -d ./bin/ ./src/*.java
+  - cp data bin/data
+  - echo
+  - echo ///////////////////////////////////////////////////////
+  - echo // LANCEMENT de l'application
+  - echo ///////////////////////////////////////////////////////
+  - cd ./bin/
+  - java -cp . MakeOPTIweb
+  - cp OPTIweb.html ../
+  - cp OPTIweb.html /tmp/OPTIweb
+  - echo
+  - echo ///////////////////////////////////////////////////////
+  - echo // EXECUTION des tests
+  - echo ///////////////////////////////////////////////////////
+  - cd ./test/
+  - casperjs.bat test casperAccueil.js
+  - casperjs.bat test casperCredits.js
+  - casperjs.bat test casperEtudiants.js
+  - casperjs.bat test casperIntervenants.js
+  - casperjs.bat test casperProjets.js
+  - casperjs.bat test casperSujets.js
+  - cd ../  - 
   - python ../asciidoc-8.6.7/asciidoc.py -a data-uri -o srcdoc/presentationFinale.html srcdoc/presentationFinale.txt
   - ls -alF srcdoc
