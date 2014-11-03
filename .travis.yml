@@ -18,11 +18,11 @@ script:
   - echo ///////////////////////////////////////////////////////
   - echo // COMPILATION des executables
   - echo ///////////////////////////////////////////////////////
-  - javac -cp .;../tools/junit.jar;./bin/ -d ./bin/ ./src/*.java
-  - cp ./data ./bin/data
+  - javac -cp .:./bin/ -d ./bin/ ./src/*.java
+  - cp data bin/data
   - echo
   - echo ///////////////////////////////////////////////////////
-  - echo // LANCEMENT de l'application
+  - echo // LANCEMENT de l\'application
   - echo ///////////////////////////////////////////////////////
   - cd ./bin/
   - java -cp . MakeOPTIweb
@@ -39,6 +39,4 @@ script:
   - casperjs.bat test casperIntervenants.js
   - casperjs.bat test casperProjets.js
   - casperjs.bat test casperSujets.js
-  - cd ../  - 
-  - python ../asciidoc-8.6.7/asciidoc.py -a data-uri -o srcdoc/presentationFinale.html srcdoc/presentationFinale.txt
-  - ls -alF srcdoc
+  - cd ../
