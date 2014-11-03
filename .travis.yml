@@ -30,7 +30,7 @@ script:
   - echo ///////////////////////////////////////////////////////
   - cd ./bin/
   - java -cp . MakeOPTIweb
-  - cp OPTIweb.html ../
+  - cp OPTIweb.html 
   - cd ../
   - echo
   - echo ///////////////////////////////////////////////////////
