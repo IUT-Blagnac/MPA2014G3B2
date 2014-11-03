@@ -18,8 +18,8 @@ script:
   - echo ///////////////////////////////////////////////////////
   - echo // COMPILATION des executables
   - echo ///////////////////////////////////////////////////////
-  - javac -cp .:./bin/ -d ./bin/ ./src/*.java
-  - cp data bin/data
+  - javac -encoding iso-8859-1 -cp .:./bin/ -d ./bin/ ./src/*.java
+  - cp ./data ./bin/data
   - echo
   - echo ///////////////////////////////////////////////////////
   - echo // LANCEMENT de l\'application
