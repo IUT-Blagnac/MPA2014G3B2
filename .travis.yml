@@ -19,7 +19,7 @@ script:
   - echo // COMPILATION des executables
   - echo ///////////////////////////////////////////////////////
   - javac -cp .;../tools/junit.jar;./bin/ -d ./bin/ ./src/*.java
-  - cp data bin/data
+  - cp ./data ./bin/data
   - echo
   - echo ///////////////////////////////////////////////////////
   - echo // LANCEMENT de l'application
