@@ -28,6 +28,7 @@ script:
   - java -cp . MakeOPTIweb
   - cp OPTIweb.html ../
   - cp OPTIweb.html /tmp/OPTIweb
+  - cd ../
   - echo
   - echo ///////////////////////////////////////////////////////
   - echo // EXECUTION des tests
