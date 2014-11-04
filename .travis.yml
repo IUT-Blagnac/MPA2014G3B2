@@ -44,4 +44,6 @@ script:
   - casperjs test casperProjets.js
   - casperjs test casperSujets.js
   - cd ../
+  - echo ///////////////////////////////////////////////////////
   - echo Fin des tests travis.
+  - echo ///////////////////////////////////////////////////////
